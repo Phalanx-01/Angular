@@ -23,6 +23,13 @@
 
 <p><button (click)="toggleFormValid()">Toggle Form Validity</button></p>
 
+  <div *ngFor="let person of persons">
+  {{ person | customPipe:true }}
+  </div>
+  <div *ngFor="let person of persons">
+  {{ person | customPipe:false }}
+  </div>
+
 <h3>🏗️ Component: Specific UI Pattern</h3>
 <p>The <strong>ActionButtonComponent</strong> provides a complete UI pattern:</p>
 

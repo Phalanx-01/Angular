@@ -1,8 +1,8 @@
-import { CustomPipePipe } from './custom-pipe-pipe';
+import { CustomPipe } from './custom-pipe';
 
-describe('CustomPipePipe', () => {
+describe('CustomPipe', () => {
   it('create an instance', () => {
-    const pipe = new CustomPipePipe();
+    const pipe = new CustomPipe();
     expect(pipe).toBeTruthy();
   });
 });

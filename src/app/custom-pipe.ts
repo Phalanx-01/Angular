@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Person } from './person';
 
 @Pipe({
   name: 'customPipe',
@@ -6,11 +7,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CustomPipe implements PipeTransform {
 
-  transform(value: PresentationStyle, displayPrefix: boolean = true ): string {
+  transform(value: Person, displayPrefix: boolean = true ): string {
     let prefix = "";
     if (displayPrefix)
-      prefix = (value.gernder === "Male") ? "Mr. " : "Ms. ";
-    return `${prefix}${value.firstName} ${value.lastName}`;
+      prefix = (value.gender === "Male") ? "Mr. " : "Ms. ";
+    return `${prefix}${value.firstName} ${value.lastName} /`;
   }
 
 }
+

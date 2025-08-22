@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { ActiveStateDirective } from './active-state.directive';
 import { ActionButtonComponent } from './action-button/action-button.component';
+import { Person } from './person';
+import { CustomPipe } from "./custom-pipe";
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-root',
-  imports: [ActiveStateDirective, ActionButtonComponent],
+  imports: [ActiveStateDirective, ActionButtonComponent, CustomPipe, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -33,4 +37,9 @@ export class App {
     console.log('Action button clicked!');
     this.simulateLoading();
   }
+
+  persons: Person[] = [
+    { firstName: "John", lastName: "Doe", gender: "Male" },
+    { firstName: "Jane", lastName: "Smith", gender: "Female" }
+  ];
 }
