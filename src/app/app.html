@@ -2,20 +2,43 @@
 <h1>Hello, {{ title }}</h1>
 <p>Congratulations! Your app is running. 🎉</p>
 
-<app-my-button
-[saved]="saved"
-[hasError]="hasError"
-buttonText="Save"
-></app-my-button>
-<p></p>
-<button type="button" [appActive]="saved || hasError">Test 2</button>
-<p></p>
-<button type="button"
-  [appActive]="saved || hasError"
-  [appDisabled]="saved && hasError">
-With override
+<hr>
+
+<h2>Directive vs Component Demo</h2>
+
+<h3>🎯 Directive: Flexible Element Enhancement</h3>
+<p>The <strong>ActiveStateDirective</strong> can modify ANY HTML element:</p>
+
+<button [appActiveState]="isFormValid" (click)="toggleFormValid()">
+  {{ isFormValid ? 'Form is Valid' : 'Form is Invalid' }}
 </button>
-<p></p>
-<a [appActive]="saved" href="https://www.google.com" target="_blank">Link</a>
-<p></p>
-<button type="button" appActive>Always active</button>
+
+<div [appActiveState]="isFormValid" style="padding: 10px; margin: 10px 0; border: 1px solid #ccc;">
+  This div uses the same directive!
+</div>
+
+<a [appActiveState]="isFormValid" href="#" style="margin: 10px 0; display: inline-block;">
+  This link also uses the directive
+</a>
+
+<p><button (click)="toggleFormValid()">Toggle Form Validity</button></p>
+
+<h3>🏗️ Component: Specific UI Pattern</h3>
+<p>The <strong>ActionButtonComponent</strong> provides a complete UI pattern:</p>
+
+<app-action-button
+  text="Save Document"
+  icon="💾"
+  [loading]="isLoading"
+  [badge]="notificationCount.toString()"
+  description="Click to save your changes"
+  (buttonClick)="onActionClick()">
+</app-action-button>
+
+<app-action-button
+  text="Delete"
+  icon="🗑️"
+  [disabled]="!isFormValid"
+  description="Only enabled when form is valid"
+  buttonClass="danger-button">
+</app-action-button>

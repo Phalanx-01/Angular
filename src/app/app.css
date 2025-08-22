@@ -1,2 +1,46 @@
 .my-btn { padding: .5rem 1rem; border-radius: .5rem; }
 .isActive { outline: 2px solid; }
+
+/* Styles for ActiveStateDirective */
+.active {
+  background-color: #28a745 !important;
+  color: white !important;
+  border-color: #28a745 !important;
+  opacity: 1 !important;
+}
+
+.disabled {
+  background-color: #6c757d !important;
+  color: #dee2e6 !important;
+  border-color: #6c757d !important;
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+/* Demo section styling */
+hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 2px solid #dee2e6;
+}
+
+h2 {
+  color: #495057;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  color: #6f42c1;
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Spacing between components */
+app-action-button {
+  margin: 10px 5px;
+  display: inline-block;
+}
