@@ -23,15 +23,27 @@
 
 <p><button (click)="toggleFormValid()">Toggle Form Validity</button></p>
 
-  <div *ngFor="let person of persons">
-  {{ person | customPipe:true }}
-  </div>
-  <div *ngFor="let person of persons">
-  {{ person | customPipe:false }}
-  </div>
+<div *ngFor="let person of persons">
+{{ person | customPipe:true }}
+</div>
+<div *ngFor="let person of persons">
+{{ person | customPipe:false }}
+</div>
 
 <h3>🏗️ Component: Specific UI Pattern</h3>
 <p>The <strong>ActionButtonComponent</strong> provides a complete UI pattern:</p>
+
+<p><button (click)="addPersonToSignal()">Add Person to Signal</button></p>
+<p><button (click)="addPersonToObservable()">Add Person to Observable</button></p>
+
+<!-- Signal Daten -->
+<div *ngFor="let person of dataCache.data()">
+{{ person | customPipe:true }}
+</div>
+<!-- Observable Daten -->
+<div *ngFor="let person of dataCache.data$ | async">
+  {{ person | customPipe:true }}
+</div>
 
 <app-action-button
   text="Save Document"

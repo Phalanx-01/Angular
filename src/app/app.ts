@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActiveStateDirective } from './active-state.directive';
 import { ActionButtonComponent } from './action-button/action-button.component';
 import { Person } from './person';
 import { CustomPipe } from "./custom-pipe";
 import { CommonModule } from '@angular/common';
+import { DataCache } from './data-cache';
 
 
 @Component({
@@ -22,6 +23,13 @@ export class App {
   protected isLoading = false;
   protected notificationCount = 3;
 
+  protected dataCache = inject(DataCache);
+
+  persons: Person[] = [
+    { firstName: "John", lastName: "Doe", gender: "Male" },
+    { firstName: "Jane", lastName: "Smith", gender: "Female" }
+  ];
+
   toggleFormValid() {
     this.isFormValid = !this.isFormValid;
   }
@@ -38,8 +46,24 @@ export class App {
     this.simulateLoading();
   }
 
-  persons: Person[] = [
-    { firstName: "John", lastName: "Doe", gender: "Male" },
-    { firstName: "Jane", lastName: "Smith", gender: "Female" }
-  ];
+  addPersonToSignal() {
+    const newPerson: Person = {
+      firstName: 'Signal',
+      lastName: 'Person',
+      gender: 'Male'
+    }
+    this.dataCache.addPerson(newPerson);
+    console.log('Added to Signal, current data:', this.dataCache.data());
+  }
+
+  addPersonToObservable() {
+    const newPerson: Person = {
+      firstName: 'Observable',
+      lastName: 'Person',
+      gender: 'Female'
+    };
+    this.dataCache.addPersonObservable(newPerson);
+    console.log('Added to Observable, current data:', this.dataCache.data$);
+  }
+  
 }
