@@ -33,15 +33,15 @@
 <h3>🏗️ Component: Specific UI Pattern</h3>
 <p>The <strong>ActionButtonComponent</strong> provides a complete UI pattern:</p>
 
-<p><button (click)="addPersonToSignal()">Add Person to Signal</button></p>
-<p><button (click)="addPersonToObservable()">Add Person to Observable</button></p>
+<p><button (click)="addPersonToSignal()" style="background: green; color:white">Add Person to Signal</button></p>
+<p><button (click)="addPersonToObservable()" style="background:blue; color: white">Add Person to Observable</button></p>
 
 <!-- Signal Daten -->
-<div *ngFor="let person of dataCache.data()">
+<div *ngFor="let person of dataCache.data()" style="background:lightgreen">
 {{ person | customPipe:true }}
 </div>
 <!-- Observable Daten -->
-<div *ngFor="let person of dataCache.data$ | async">
+<div *ngFor="let person of dataCache.data$ | async" style="background:lightblue; padding: 5px">
   {{ person | customPipe:true }}
 </div>
 
