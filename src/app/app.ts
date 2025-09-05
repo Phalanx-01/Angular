@@ -69,5 +69,10 @@ export class App {
     this.dataCache.addPersonObservable(newPerson);
     console.log('Added to Observable, current data:', this.dataCache.data$);
   }
+
+  incrementCounter() {
+    this.myCounter++;
+    console.log('Delete clicked! Counter is now:', this.myCounter);
+  }
   
 }

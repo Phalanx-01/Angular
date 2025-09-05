@@ -59,7 +59,8 @@
   icon="🗑️"
   [disabled]="!isFormValid"
   description="Only enabled when form is valid"
-  buttonClass="danger-button">
+  buttonClass="danger-button"
+  (buttonClick)="incrementCounter()">
 </app-action-button>
 
 <app-product-card
