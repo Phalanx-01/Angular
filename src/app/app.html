@@ -73,3 +73,8 @@
 [maxItems]="10"
 [term]="' Test '">
 </app-transforms>
+
+<app-two-way-binding
+[(count)]="myCounter">
+</app-two-way-binding>
+<p>Counter value in parent: {{ myCounter }}</p>

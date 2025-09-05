@@ -7,11 +7,12 @@ import { CommonModule } from '@angular/common';
 import { DataCache } from './data-cache';
 import { ProductCard } from "./components/product-card/product-card";
 import { Transforms } from "./components/transforms/transforms";
+import { TwoWayBinding } from "./components/two-way-binding/two-way-binding";
 
 
 @Component({
   selector: 'app-root',
-  imports: [ActiveStateDirective, ActionButtonComponent, CustomPipe, CommonModule, ProductCard, Transforms],
+  imports: [ActiveStateDirective, ActionButtonComponent, CustomPipe, CommonModule, ProductCard, Transforms, TwoWayBinding],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -19,6 +20,7 @@ export class App {
   protected title = 'my-app-1';
   protected saved = true;
   protected hasError = false;
+  protected myCounter = 0;
   
   // New properties for directive/component demo
   protected isFormValid = true;
