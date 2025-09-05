@@ -74,7 +74,7 @@ import { CommonModule } from '@angular/common';
     .button-description {
       margin-top: 4px;
       font-size: 12px;
-      color: #666;
+      color: #9e1c1cff;
       text-align: center;
     }
   `]
