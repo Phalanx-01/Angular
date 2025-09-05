@@ -9,7 +9,7 @@ import { booleanAttribute, Component, input, numberAttribute } from '@angular/co
 export class Transforms {
   darkmode = input(false, {transform: booleanAttribute});
   maxItems = input(10, {transform: numberAttribute});
-  searchTerm = input('', {transform: normalizeText});
+  searchTerm = input('', {transform: normalizeText, alias: 'term'});
 }
 
 function normalizeText(value: string | undefined): string {
