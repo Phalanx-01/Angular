@@ -1,1 +1,6 @@
-<p>product-card works!</p>
+<div class="product-card">
+<h3>{{ productName() }}</h3>
+<p>Price: ${{ price() }}</p>
+<p>Status: {{ inStock() ? 'Available' : 'Out of Stock' }}</p>
+</div>
+

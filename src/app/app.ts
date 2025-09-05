@@ -5,11 +5,12 @@ import { Person } from './person';
 import { CustomPipe } from "./custom-pipe";
 import { CommonModule } from '@angular/common';
 import { DataCache } from './data-cache';
+import { ProductCard } from "./components/product-card/product-card";
 
 
 @Component({
   selector: 'app-root',
-  imports: [ActiveStateDirective, ActionButtonComponent, CustomPipe, CommonModule],
+  imports: [ActiveStateDirective, ActionButtonComponent, CustomPipe, CommonModule, ProductCard],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
