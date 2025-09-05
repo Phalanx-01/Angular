@@ -6,11 +6,12 @@ import { CustomPipe } from "./custom-pipe";
 import { CommonModule } from '@angular/common';
 import { DataCache } from './data-cache';
 import { ProductCard } from "./components/product-card/product-card";
+import { Transforms } from "./components/transforms/transforms";
 
 
 @Component({
   selector: 'app-root',
-  imports: [ActiveStateDirective, ActionButtonComponent, CustomPipe, CommonModule, ProductCard],
+  imports: [ActiveStateDirective, ActionButtonComponent, CustomPipe, CommonModule, ProductCard, Transforms],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
